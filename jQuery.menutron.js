@@ -7,7 +7,6 @@
  * Licensed under the MIT License
  */
 
-
 (function($){
 	$.fn.menutron = function(options) {
 
@@ -77,5 +76,4 @@
 
 		});
 	};
-
 })(jQuery);
