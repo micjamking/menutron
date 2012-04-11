@@ -2,6 +2,10 @@ h1. Menutron
 
 A jQuery plugin for responsive navigation menus
 
+h2. Demo
+
+Plugin Demo: "http://dev.85pixels.com/wordpress/menutron-demo/":http://dev.85pixels.com/wordpress/menutron-demo/
+
 h2. What it does
 
 Menutron transforms your navigation menus from a list to a select menu when resizing your browser. On mobile devices, the select menu pulls up a native control, making it easier to pick an item.
@@ -27,7 +31,7 @@ Let's say your navigation menu markup looks like this:
 </nav>
 </pre>
 
-Simply call the Menutron function, using the navigation list container (ie. the @<nav>@) as a selector...
+Simply call the Menutron function, using the list menu container (ie. @<nav id="main">@) as a selector...
 
 <pre>
 <script>
@@ -40,14 +44,16 @@ Simply call the Menutron function, using the navigation list container (ie. the 
 ...and your list _transforms_ in to a select control when the screensize is below the specified screen width!
 
 <pre>
-<select>
-  <option selected="selected" value="">Choose...</option>
-  <option value='google.com'>Google</option>
-  <option value='facebook.com'>Facebook</option>
-  <option value='twitter.com'>Twitter</option>
-  <option value='pinterest.com'>Pinterest</option>
-  <option value='flickr.com'>Flickr</option>
-</select>
+<nav id="main">
+  <select>
+    <option selected="selected" value="">Choose...</option>
+    <option value='google.com'>Google</option>
+    <option value='facebook.com'>Facebook</option>
+    <option value='twitter.com'>Twitter</option>
+    <option value='pinterest.com'>Pinterest</option>
+    <option value='flickr.com'>Flickr</option>
+  </select>
+</nav>
 </pre>
 
 By default, the plugin has a media query set to @max-width: 600px@. If you want to set your own media query, the plugin has an option for that. Just pass in your desired size to @maxScreenWidth@ like below:
