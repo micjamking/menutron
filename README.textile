@@ -73,7 +73,7 @@ Now when a browser width is below *480px*, the list will transform in to a selec
 h2. What you'll need (dependencies)
 
 * *"A responsive design":http://www.alistapart.com/articles/responsive-web-design/* ;)
-* *"The latest jQuery":http://code.jquery.com/jquery-latest.js* (It may work on previous versions, but it's only been tested on the latest)
+* *"Latest jQuery":http://code.jquery.com/jquery-latest.js* (It may work on previous versions, but it's only been tested on the latest)
 * For devices with retina displays, a @<meta name="viewport" content="initial-scale=1.0" />@ in the head will make the device screen resolution equal to the device screen size (1:1). Although not needed, I also disable zooming when controls are selected. Below is my meta tag:
 
 <pre>
