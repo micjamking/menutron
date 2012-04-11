@@ -11,7 +11,7 @@ Menutron transforms your navigation menus from a list to a select menu when resi
 * *It's intuitive* - It works on any type of list (ol,ul,dl).
 
 
-h2. How it does it
+h2. How it works
 
 Let's say your navigation menu markup looks like this:
 
