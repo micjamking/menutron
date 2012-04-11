@@ -1,49 +1,63 @@
-#Menutron 
+h1. Menutron 
+
 A jQuery plugin for responsive navigation menus
 
-##What it does
+h2. What it does
+
 Menutron transforms your navigation menus from a list to a select menu when resizing your browser. On mobile devices, the select menu pulls up a native control, making it easier to pick an item.
 
-* __It's concise__ - When implemented in a responsive design, your menu becomes consolidated in to a single control, saving you horizontal and/or vertical real-estate.
-* __It's intuitive__ - It works on any type of list (ol,ul,dl) and the select control is easily recognizable.
-* __It's convenient__ - On mobile devices, the select controls will activate a native control, like the picker control for iOS, which can be navigated using drag, nudge, or flick gestures. 
+* *It's concise* - When implemented in a responsive design, your menu becomes consolidated in to a single control, saving you horizontal and/or vertical real-estate.
+* *It's intuitive* - It works on any type of list (ol,ul,dl) and the select control is easily recognizable.
+* *It's convenient* - On mobile devices, the select controls will activate a native control, like the picker control for iOS, which can be navigated using drag, nudge, or flick gestures. 
 
 
-##How it does it
+h2. How it does it
+
 Let's say your navigation menu markup looks like this:
-```
-	<nav id="main">
-		<ul>
-			<li><a href="http://www.google.com">Google</a></li>
-			<li><a href="http://www.facebook.com">Facebook</a></li>
-			<li><a href="http://www.twitter.com">Twitter</a></li>
-			<li><a href="http://www.pinterest.com">Pinterest</a></li>
-			<li><a href="http://www.flickr.com">Flickr</a></li>
-		</ul>
-	</nav>
-```
+
+<pre>
+<nav id="main">
+  <ul>
+    <li><a href='google.com'>Google</a></li>
+    <li><a href='facebook.com'>Facebook</a></li>
+    <li><a href='twitter.com'>Twitter</a></li>
+    <li><a href='pinterest.com'>Pinterest</a></li>
+    <li><a href='flickr.com'>Flickr</a></li>
+  </ul>
+</nav>
+</pre>
 
 Simply call the Menutron function, using the navigation tag as a selector
-```
-	<script>
-		$(function (){
-			$("#nav, nav").menutron();
-		});
-	</script>
-```
 
-By default, the plugin has a media query set to ```max-width: 600px```. If you want to set your own media query, the plugin has an option for that. Just pass in your desired size to ```maxScreenWidth``` like below:
-```
-	<script>
-		$(function (){
-			$("#nav, nav").menutron({
-				maxScreenWidth: 450
-			});
-		});
-	</script>
-```
+<pre>
+<script>
+  $(function(){
+    $("nav#main").menutron();
+  });
+</script>
+</pre>
 
+By default, the plugin has a media query set to @max-width: 600px@. If you want to set your own media query, the plugin has an option for that. Just pass in your desired size to @maxScreenWidth@ like below:
 
-##What you'll need (dependencies)
+<pre>
+<script>
+  $(function(){
+    $("nav#main").menutron({
+      maxScreenWidth: 480
+    });
+  });
+</script>
+</pre>
 
+Now any device below a width of @480px@ will get a select menu.  
+
+h2. What you'll need (dependencies)
+
+* *"A responsive design":http://www.alistapart.com/articles/responsive-web-design/* ;)
+* *"The latest jQuery":http://code.jquery.com/jquery-latest.js* (It may work on previous versions, but it's only been tested on the latest)
+* For devices with retina displays, a @<meta name="viewport" content="initial-scale=1.0" />@ in the head will make the device screen resolution equal to the device screen size (1:1). Although not needed, I also disable zooming when controls are selected. Below is my meta tag:
+
+<pre>
+<meta name="viewport" content="initial-scale=1.0, width=device-width, maximum-scale=1.0, user-scalable=no" />
+</pre>
 
