@@ -7,8 +7,8 @@ h2. What it does
 Menutron transforms your navigation menus from a list to a select menu when resizing your browser. On mobile devices, the select menu pulls up a native control, making it easier to pick an item.
 
 * *It's concise* - When implemented in a responsive design, your menu becomes consolidated in to a single control, saving you horizontal and/or vertical real-estate.
-* *It's intuitive* - It works on any type of list (ol,ul,dl) and the select control is easily recognizable.
 * *It's convenient* - On mobile devices, the select controls will activate a native control, like the picker control for iOS, which can be navigated using drag, nudge, or flick gestures. 
+* *It's intuitive* - It works on any type of list (ol,ul,dl).
 
 
 h2. How it does it
