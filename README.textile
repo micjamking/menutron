@@ -8,7 +8,7 @@ Menutron transforms your navigation menus from a list to a select menu when resi
 
 * *It's concise* - When implemented in a responsive design, your menu becomes consolidated in to a single control, saving you horizontal and/or vertical real-estate.
 * *It's convenient* - On mobile devices, the select controls will activate a native control, like the picker control for iOS, which can be navigated using drag, nudge, or flick gestures. 
-* *It's intuitive* - It works on any type of list (ol,ul,dl).
+* *It's intuitive* - It works on any type of list (ol,ul,dl) and automatically adds a menu title of "Choose..." for easy recognition 
 
 
 h2. How it works
@@ -27,7 +27,7 @@ Let's say your navigation menu markup looks like this:
 </nav>
 </pre>
 
-Simply call the Menutron function, using the navigation tag as a selector
+Simply call the Menutron function, using the navigation list container (ie. the @<nav>@) as a selector...
 
 <pre>
 <script>
@@ -35,6 +35,19 @@ Simply call the Menutron function, using the navigation tag as a selector
     $("nav#main").menutron();
   });
 </script>
+</pre>
+
+...and your list _transforms_ in to a select control when the screensize is below the specified screen width!
+
+<pre>
+<select>
+  <option selected="selected" value="">Choose...</option>
+  <option value='google.com'>Google</option>
+  <option value='facebook.com'>Facebook</option>
+  <option value='twitter.com'>Twitter</option>
+  <option value='pinterest.com'>Pinterest</option>
+  <option value='flickr.com'>Flickr</option>
+</select>
 </pre>
 
 By default, the plugin has a media query set to @max-width: 600px@. If you want to set your own media query, the plugin has an option for that. Just pass in your desired size to @maxScreenWidth@ like below:
@@ -49,7 +62,7 @@ By default, the plugin has a media query set to @max-width: 600px@. If you want 
 </script>
 </pre>
 
-Now any device below a width of @480px@ will get a select menu.  
+Now when a browser width is below *480px*, the list will transform in to a select menu.  
 
 h2. What you'll need (dependencies)
 
