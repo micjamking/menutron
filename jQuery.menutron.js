@@ -74,8 +74,9 @@
 			function transformMenu() {
 
 				// Media query for device screens (default: 600px)
-				// *Note, window.matchMedia does not work on Android 2.3 (Gingerbread)
-				if ($(window).width() <= options.maxScreenWidth || window.matchMedia(screenWidth).matches) {
+				// *Note, I would like to use window.matchMedia(screenWidth).matches here, but it does not work on 		
+				// Android 2.3 (Gingerbread). https://developer.mozilla.org/en/DOM/window.matchMedia#section_4
+				if ($(window).width() <= options.maxScreenWidth) {
 
 					// Hides the original menu list from the display
 					$(selectMenu).css("display", "inline-block");
