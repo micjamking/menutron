@@ -75,7 +75,7 @@
 
 				// Media query for device screens (default: 600px)
 				// *Note, window.matchMedia does not work on Android 2.3 (Gingerbread)
-				if (window.matchMedia(screenWidth).matches || $(window).width() <= options.maxScreenWidth) {
+				if ($(window).width() <= options.maxScreenWidth) {
 
 					// Hides the original menu list from the display
 					$(selectMenu).css("display", "inline-block");
