@@ -55,7 +55,7 @@
 				//	$(selectMenu).prepend(menuTitle);
 				//}
 
-				var menuTitle = ['<option selected="selected" value>Choose...</option>'].join("");
+				var menuTitle = '<option selected="selected" value>Choose...</option>';
 
 				// Appends the newly created list to menu's container element
 				$(selectMenu).prepend(menuTitle);
@@ -74,7 +74,8 @@
 			function transformMenu() {
 
 				// Media query for device screens (default: 600px)
-				if (window.matchMedia(screenWidth).matches) {
+				// *Note, window.matchMedia does not work on Android 2.3 (Gingerbread)
+				if (window.matchMedia(screenWidth).matches || $(window).width() <= options.maxScreenWidth) {
 
 					// Hides the original menu list from the display
 					$(selectMenu).css("display", "inline-block");
