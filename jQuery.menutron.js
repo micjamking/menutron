@@ -11,22 +11,45 @@
 	$.fn.menutron = function(options) {
 
 		var defaults = {
-			maxScreenWidth: 600
+			maxScreenWidth: 600,
+			menuTitle: 'Choose...'
 		};
 
 		var options = $.extend(defaults, options);
 
 		return this.each(function() {
 			
-			var menu = $(this).children();
-			var screenWidth = "(max-width: " + options.maxScreenWidth + "px)";		
+			var menu = $(this).children();		
 			var selectMenu = $('<select>').css("display", "none");	
 
 			init();
 
 			function init() {
+				checkWidth();
 				createMenu();
 				transformMenu();
+			}
+			
+			function checkWidth(){
+				
+				// Media query for device screens (default: 600px)
+				// *Note, I would like to use window.matchMedia(screenWidth).matches here, but it does not work on 		
+				// Android 2.3 (Gingerbread). https://developer.mozilla.org/en/DOM/window.matchMedia#section_4
+				if ($(window).width() < options.maxScreenWidth){
+
+					// Hides the original menu list from the display
+					$(selectMenu).css("display", "inline-block");
+
+					// Hides the original menu list from the display
+					$(menu).css("display", "none");				
+				} else {
+
+					// Hides the select menu from the display
+					$(selectMenu).css("display", "none");
+
+					// Show the original menu list
+					$(menu).css("display", "block");
+				}
 			}
 
 			function createMenu(){
@@ -45,17 +68,7 @@
 					} 
 				});
 
-				// Adds an option item to inform the user to Choose
-				// FYI, I would like to replace this with the dl's dt if present
-				//if ($(menu).find('dt')){
-				//	var menuTitle = ['<option selected="selected" value>' + $(menu).find('dt').text() + '</option>'].join("");
-				//	$(selectMenu).prepend(menuTitle);
-				//} else {
-				//	var menuTitle = ['<option selected="selected" value>Choose...</option>'].join("");
-				//	$(selectMenu).prepend(menuTitle);
-				//}
-
-				var menuTitle = '<option selected="selected" value>Choose...</option>';
+				var menuTitle = '<option selected="selected" value>' + options.menuTitle + '</option>';
 
 				// Appends the newly created list to menu's container element
 				$(selectMenu).prepend(menuTitle);
@@ -68,41 +81,10 @@
 						window.location.href=$(this).val();
 					}
 				});
-
 			}
 
 			function transformMenu() {
-
-				// Media query for device screens (default: 600px)
-				// *Note, I would like to use window.matchMedia(screenWidth).matches here, but it does not work on 		
-				// Android 2.3 (Gingerbread). https://developer.mozilla.org/en/DOM/window.matchMedia#section_4
-				if ($(window).width() <= options.maxScreenWidth) {
-
-					// Hides the original menu list from the display
-					$(selectMenu).css("display", "inline-block");
-
-					// Hides the original menu list from the display
-					$(menu).css("display", "none");
-				}
-
-				// Event trigger for responsive menu
-				$(window).resize(function(){
-					if ($(window).width() < options.maxScreenWidth){
-
-						// Hides the original menu list from the display
-						$(selectMenu).css("display", "inline-block");
-
-						// Hides the original menu list from the display
-						$(menu).css("display", "none");				
-					} else {
-
-						// Hides the original menu list from the display
-						$(selectMenu).css("display", "none");
-
-						// Show the original menu list
-						$(menu).css("display", "block");
-					}
-				});
+				$(window).resize(function(){checkWidth();});	
 			}
 
 		});
