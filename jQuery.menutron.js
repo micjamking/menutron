@@ -20,7 +20,8 @@
 		return this.each(function() {
 			
 			var menu = $(this).children();		
-			var selectMenu = $('<select>').css("display", "none");	
+			var selectMenu = $('<select>').css("display", "none");
+			var optGroup = $('<optgroup>').css("display", "none");
 
 			init();
 
@@ -61,10 +62,31 @@
 					// If using a descriptive list, 'dl',
 					// this only adds 'dd' to selectMenu & skips over 'dt'
 					if($(this).get(0).tagName !== 'DT'){
-						var option = $('<option>').text($(this).text());
-						var link = $(this).children("a").attr("href");
-						$(option).attr("value", link);
-						$(option).appendTo(selectMenu);
+						
+						if($(this).find('ul,ol,dl').length){
+							
+							$(optGroup).attr("label",$(this).children(':first').text());
+							var option = $('<option>').text($(this).children(':first').text());
+							var link = $(this).children("a").attr("href");
+							$(option).attr("value", link);
+							$(option).appendTo(optGroup);
+							
+							var nestedList = $(this).children().not(':first');
+							
+							$(nestedList).children().each(function(){
+								var option = $('<option>').text($(this).text());
+								var link = $(this).children("a").attr("href");
+								$(option).attr("value", link);
+								$(option).appendTo(optGroup);
+							});
+							console.log(optGroup);
+							$(optGroup).appendTo(selectMenu);
+						} else {
+							var option = $('<option>').text($(this).text());
+							var link = $(this).children("a").attr("href");
+							$(option).attr("value", link);
+							$(option).appendTo(selectMenu);
+						}
 					} 
 				});
 
