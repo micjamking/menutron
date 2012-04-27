@@ -68,7 +68,20 @@ By default, the plugin has a media query set to @max-width: 600px@. If you want 
 </script>
 </pre>
 
-Now when a browser width is below *480px*, the list will transform in to a select menu.  
+Now when a browser width is below *480px*, the list will transform in to a select menu.
+
+If you want your own custom menu title for the select menu on mobile, just pass in the desired title to the @menuTitle@ option as below:
+
+<pre>
+<script>
+  $(function(){
+    $("nav#main").menutron({
+      maxScreenWidth: 480,
+      menuTitle: 'Main Menu:'
+    });
+  });
+</script>
+</pre>
 
 h2. What you'll need (dependencies)
 
@@ -82,6 +95,6 @@ h2. What you'll need (dependencies)
 
 h2. FYI
 
-* The current version of the plugin does not support nested lists (ie. @ul > li > ul > li@). As far as I know, there aren't any good solutions for handling nested lists in responsive designs. If you know any, feel free to "fork the repo":https://github.com/micjamking/Menutron/fork_select and make a pull request.
-* In the next update, I plan to support definition list titles (@<dt>@) as the select menu's default title when there is one available. Just haven't gotten around to it yet :(
-* Oh, I should also mention this is my first jQuery plugin (yay!), so I apologize ahead of time if you decide to look under the hood see something _weird_. If you have any suggestions, comments, or creative insults for my code, "add an issue":https://github.com/micjamking/Menutron/issues/new.
+* As of 04.27.2012, Menutron can support nested lists up to 2 levels (ie. ul > li > ul > li).
+* In the next update, I plan to support definition list titles (@<dt>@) as the select menu's default title when there is one available. As of 04.27.2012, there is an option for to specify your own custom select menu title.
+* If you have any suggestions, comments, or creative insults for my code, "add an issue":https://github.com/micjamking/Menutron/issues/new or "fork the repo":https://github.com/micjamking/Menutron/fork_select.
