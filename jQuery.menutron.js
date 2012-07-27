@@ -98,7 +98,7 @@
 
 				// Change Window.location, ie. the current url,
 				// to the value of the selected option
-				$('select').change(function(){
+				selectMenu.change(function(){
 					if($(this).val()!=''){
 						window.location.href=$(this).val();
 					}
