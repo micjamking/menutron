@@ -1,147 +1,64 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="initial-scale=1.0, width=device-width, maximum-scale=1.0, user-scalable=no" />
+<link rel="stylesheet" href="css/style.css" />
+<title>Menutron</title>
+</head>
 
-  <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Menutron : A jQuery plugin for responsive navigation menus  " />
-
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>Menutron</title>
-  </head>
-
-  <body>
-
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/micjamking/Menutron">View on GitHub</a>
-
-          <h1 id="project_title">Menutron</h1>
-          <h2 id="project_tagline">A jQuery plugin for responsive navigation menus  </h2>
-
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/micjamking/Menutron/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/micjamking/Menutron/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <p>h1. Menutron </p>
-
-<p>A jQuery plugin for responsive navigation menus</p>
-
-<p>h2. Demo</p>
-
-<p>Plugin Demo: "<a href="http://dev.85pixels.com/wordpress/menutron-demo/%22:http://dev.85pixels.com/wordpress/menutron-demo/">http://dev.85pixels.com/wordpress/menutron-demo/":http://dev.85pixels.com/wordpress/menutron-demo/</a></p>
-
-<p>h2. What it does</p>
-
-<p>Menutron transforms your navigation menus from a list to a select menu when resizing your browser. On mobile devices, the select menu pulls up a native control, making it easier to pick an item.</p>
-
-<ul>
-<li>
-<em>It's concise</em> - When implemented in a responsive design, your menu becomes consolidated in to a single control, saving you horizontal and/or vertical real-estate.</li>
-<li>
-<em>It's convenient</em> - On mobile devices, the select controls will activate a native control, like the picker control for iOS, which can be navigated using drag, nudge, or flick gestures. </li>
-<li>
-<em>It's intuitive</em> - It works on any type of list (ol,ul,dl) and automatically adds a menu title of "Choose..." for easy recognition </li>
-</ul><p>h2. How it works</p>
-
-<p>Let's say your navigation menu markup looks like this:</p>
-
-<pre>
- <ul>
-<li><a href="google.com">Google</a></li>
-    <li><a href="facebook.com">Facebook</a></li>
-    <li><a href="twitter.com">Twitter</a></li>
-    <li><a href="pinterest.com">Pinterest</a></li>
-    <li><a href="flickr.com">Flickr</a></li>
-  </ul> </pre>
-
-<p>Simply call the Menutron function, using the list menu container (ie. @ @) as a selector... </p>
-
-<pre>
-
-  $(function(){
-    $("nav#main").menutron();
-  });
-</pre>
-
-<p>...and your list <em>transforms</em> in to a select control when the screensize is below the specified screen width!</p>
-
-<pre>
- Choose...GoogleFacebookTwitterPinterestFlickr </pre>
-
-<p>By default, the plugin has a media query set to @max-width: <a href="mailto:600px@">600px@</a>. If you want to set your own media query, the plugin has an option for that. Just pass in your desired size to @maxScreenWidth@ like below:</p>
-
-<pre>
-
-  $(function(){
-    $("nav#main").menutron({
-      maxScreenWidth: 480
-    });
-  });
-</pre>
-
-<p>Now when a browser width is below <em>480px</em>, the list will transform in to a select menu.</p>
-
-<p>If you want your own custom menu title for the select menu on mobile, just pass in the desired title to the @menuTitle@ option as below:</p>
-
-<pre>
-
-  $(function(){
-    $("nav#main").menutron({
-      maxScreenWidth: 480,
-      menuTitle: 'Main Menu:'
-    });
-  });
-</pre>
-
-<p>h2. What you'll need (dependencies)</p>
-
-<ul>
-<li>
-<em>"A responsive design":<a href="http://www.alistapart.com/articles/responsive-web-design/">http://www.alistapart.com/articles/responsive-web-design/</a></em> ;)</li>
-<li>
-<em>"Latest jQuery":<a href="http://code.jquery.com/jquery-latest.js">http://code.jquery.com/jquery-latest.js</a></em> (It may work on previous versions, but it's only been tested on the latest)</li>
-<li>For devices with retina displays, a @@ in the head will make the device screen resolution equal to the device screen size (1:1). Although not needed, I also disable zooming when controls are selected. Below is my meta tag:</li>
-</ul><pre>
-</pre>
-
-<p>h2. FYI</p>
-
-<ul>
-<li>As of 04.27.2012, Menutron can support nested lists up to 2 levels (ie. ul &gt; li &gt; ul &gt; li).</li>
-<li>In the next update, I plan to support definition list titles (@<dt>@) as the select menu's default title when there is one available. As of 04.27.2012, there is an option for to specify your own custom select menu title.</dt>
-</li>
-<li>If you have any suggestions, comments, or creative insults for my code, "add an issue":<a href="https://github.com/micjamking/Menutron/issues/new">https://github.com/micjamking/Menutron/issues/new</a> or "fork the repo":<a href="https://github.com/micjamking/Menutron/fork_select">https://github.com/micjamking/Menutron/fork_select</a>.</li>
-</ul><p><em>MIT LICENSE</em></p>
-
-<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
-
-<p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
-
-<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
-
-<p><em>Copyright</em>
-Copyright (c) 2012 Mike King (<a href="https://github.com/micjamking" class="user-mention">@micjamking</a>)</p>
-      </section>
-    </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Menutron maintained by <a href="https://github.com/micjamking">micjamking</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
-
-    
-
-  </body>
+<body>
+	<div id="container">
+		<header>
+			<h1>Menutron</h1>
+			<p>Browser window width: <strong id="current"></strong></p>
+		</header>
+		<section id="mainbody">
+			<div id="nav">
+				<h2>Unordered List</h2>
+				<ul>
+					<li><a href="http://www.google.com">Google</a></li>
+					<li><a href="http://www.facebook.com">Facebook</a></li>
+					<li><a href="http://www.twitter.com">Twitter</a></li>
+					<li><a href="http://www.pinterest.com">Pinterest</a></li>
+					<li><a href="http://www.flickr.com">Flickr</a>
+						<ul>
+							<li><a href="http://www.flickr.com/about/">Who We Are</a></li>
+							<li><a href="http://www.flickr.com/tour/#section=welcome">Take the Tour</a></li>
+							<li><a href="http://blog.flickr.net/en">Flickr Blog</a></li>
+							<li><a href="http://www.flickr.com/help/guidelines/">Community</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+					
+			<nav role="navigation">
+				<h2>Definition List</h2>
+				<dl>
+					<dt>Menu:</dt>
+					<dd><a href="http://www.google.com">Google</a></dd>
+					<dd><a href="http://www.facebook.com">Facebook</a></dd>
+					<dd><a href="http://www.twitter.com">Twitter</a></dd>
+					<dd><a href="http://www.pinterest.com">Pinterest</a></dd>
+					<dd><a href="http://www.flickr.com">Flickr</a></dd>
+				</dl>				
+			</nav>
+		</section>
+		<div class="clear"></div>
+	</div><!-- End of Container -->
+	
+	<footer>
+		<p>&copy; 2012 jQuery Menutron Plugin | Created by Mike King</p>
+	</footer>
+	
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<script src="https://raw.github.com/micjamking/Menutron/master/jQuery.menutron.js"></script>
+	<script>
+		$(function(){
+			$('strong#current').text($(window).width() + 'px');
+			$(window).resize(function(){$('strong#current').text($(window).width() + 'px');});
+			$("#nav, nav").menutron();
+		});
+	</script>
+</body>
 </html>
