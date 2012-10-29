@@ -4,7 +4,7 @@ A jQuery plugin for responsive navigation menus
 
 h2. Demo
 
-Plugin Demo: "http://dev.85pixels.com/wordpress/menutron-demo/":http://dev.85pixels.com/wordpress/menutron-demo/
+Plugin Demo: "http://micjamking.github.com/Menutron/":http://micjamking.github.com/Menutron/
 
 h2. What it does
 
